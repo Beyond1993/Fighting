@@ -35,7 +35,8 @@ real-time priority The values are configurable, but by default range from 0 to 9
 第一个问题：
     后台的进程，计算密集型进程，需要频繁的上下文切换，但是因为 nice 值高(优先级比较低)， 所以时间片小，上下文切换的代价非常大.
 
-第二问题:
+第二问题: 
+     nice 值加1， 可能是 10 ms 到 5ms, 也可能是 100ms 到 95ms, 一个是减少50%, 一个是减少5%
 
 第三问题：
 
