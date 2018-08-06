@@ -15,7 +15,7 @@ I/0-Bound Versus Processor-Bound Processes
 I/0 not only the disk, but also any type of blockable resource, such as keyboard input , mouse, or network I/0. Most GUI are I/0 bound, they spend most of their time waiting on user ineraction.
 
 ### 4.3 策略
-#### 4.3.1 I/O 消耗型和c处理器消耗型的进程
+#### 4.3.1 I/O 消耗型和处理器消耗型的进程
 #### 4.3.2 进程优先级
 Process Priority
 two separate priority ranges:
@@ -23,7 +23,7 @@ first:
 nice value : -20 ~ +19, default is 0, nice value is smaller, priority is higher. To see a list if nice value ps -el
 
 second:
-real-time priority The values are configurable, but by default range from 0 to 99, inclusive. Opposite from nice values, higher real-time priority values correspond to a greater priority
+real-time priority The values are configurable, but by default range from 0 to 99, inclusive. Opposite from nice vales, higher real-time priority values correspond to a greater priority
 
 #### 4.3.3 时间片
 #### 4.3.4 调度策略的活动
@@ -32,13 +32,14 @@ real-time priority The values are configurable, but by default range from 0 to 9
 #### 4.4.2 Unix系统中的进程调度
 在抢占式时间片调度器中， 有四大问题：
 
-第一
+第一个问题：
+    后台的进程，计算密集型进程，需要频繁的上下文切换，但是因为 nice 值高(优先级比较低)， 所以时间片小，上下文切换的代价非常大.
 
-第二
+第二问题:
 
-第三
+第三问题：
 
-第四
+第四问题：
 
 问题的本质在于使用了固定的时间片和固定的切换频率. 这种Fixed 系统模型设计，一般来说效率不高。
 所以我们要解决的问题是, 使用更加灵活的CPU 分配方式。
